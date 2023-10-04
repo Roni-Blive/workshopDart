@@ -1,25 +1,43 @@
-enum StatusDoEnvioDoPedido{
- confirmado, enviado, entregue  
-}
-
 void main() {
   
-  // For
+  bebidaNoFimDeSemana();
+  kasinoNoSabadaco();
+  cidadeDeGotham();
+  acompanharPedido();
+  acompanharStatusDeVida();
+  sobreCidades();
+
+}
+
+void bebidaNoFimDeSemana(){
   print("Quantos copos de cerveja você toma em uma noite de fim de semana?");
+
   for (int i = 0; i < 5; i++) {
     print('Talvez, só ${i + 1}... sabe.');
   }
+}
+
+void kasinoNoSabadaco(){
   
   var gilbertoBarros = 
-    ["Kasino!", "Aeeeee Kasinão!", "Can't get over, vai DJ!"];
+    ["Kasino!", "Aeeeee Kasinão!", "Can't get over, vai DJ!", 'Kasino aeee!', 'O som da noite!'];
   
   for(var fraseAnimada in gilbertoBarros){
     print(fraseAnimada.toUpperCase());
   }
-  
-  // While
-  
-  // Return como false para não ficar em loop infito
+
+  /**
+   * Propriedade e métodos oportunos.
+   * Existem muitos outros, vale a pena olhar a documentação.
+   */
+  gilbertoBarros.forEach(print);
+  print(gilbertoBarros.length);
+  print(gilbertoBarros.last);
+  print(gilbertoBarros.indexOf("Can't get over, vai DJ!"));
+}
+
+void cidadeDeGotham(){
+
   bool existirCriminalidadeEmGotham(){
     return false;
   }
@@ -49,9 +67,14 @@ void main() {
      */
 
   }while(existirCriminalidadeEmGotham());
-  
-  // Switch
+}
 
+enum StatusDoEnvioDoPedido{
+ confirmado, enviado, entregue  
+}
+
+void acompanharPedido(){
+  
   final statusPedido = StatusDoEnvioDoPedido.confirmado;
 
   switch(statusPedido){
@@ -65,11 +88,11 @@ void main() {
       print("Pedido entregue.");
       break;
   }
+}
 
-  // forEach
-  gilbertoBarros.forEach(print);
+void acompanharStatusDeVida(){
 
-  /**
+   /**
    * Set
    * 
    * Set é uma collection de item únicos ou seja, seus valores não podem se repetirem.
@@ -77,9 +100,9 @@ void main() {
    * No primeiro exemplo, o Set não está declarado mas Dart infere que o tipo da collection é um Set de String.
    * Se segundo exemplo, há a declaração explicíta de um Set de String.
    */
-  const batmanVillains = {'Joker', 'Poison Evy', 'Penguin'};
+  const filmesAssistidos = {'La La Land', 'John Wick 4', 'Barbie'};
 
-  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho'};
+  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho', 'Livros'};
 
   /**
    * Set - Ponto de atenção:
@@ -89,22 +112,32 @@ void main() {
    * No primeiro exemplo, temos um Map vazio.
    * Se segundo, temos um Set vazio.
    */
-  const livrosNaPrateleira = {};
+  const mesesDoAnoEmQueFrequenteiAcademia = {};
   Set<String> livrosLidosEsteAno = {};
 
   /**
    * Set - Métodos oportunos
-   * 
+   * Existem muitos outros, vale a pena olhar a documentação.
    */
   livrosLidosEsteAno.add('O Retrato de Dorian Gray');
   livrosLidosEsteAno.add('O Pequeno Princípe');
   livrosLidosEsteAno.add('Fogo & Sangue');
 
   livrosLidosEsteAno.forEach(print);
+
+  String listaEmString = livrosLidosEsteAno.toString();
+
   List<String> lista = livrosLidosEsteAno.toList();
 
+  // Imprimindo valores
   print(lista);
+  print(listaEmString);
+  print(mesesDoAnoEmQueFrequenteiAcademia); // lista vazia
+  print(inimigosDaMinhaCarteira);
+  print(filmesAssistidos);
+}
 
+void sobreCidades(){
   /**
    * Map
    * 
@@ -135,6 +168,4 @@ void main() {
   print(cidadeRJ);
   print(cidadeSP);
   print(cidadeRN);
-
-  // TO DO: Separar em funções
 }
