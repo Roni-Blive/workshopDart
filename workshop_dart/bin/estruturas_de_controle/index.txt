@@ -1,0 +1,11 @@
+- Estrutura de Controle:
+
+- Loops:
+-- for in
+
+- Fluxo:
+--switch case
+
+Map, Array(List), Sets
+
+Funções interessantes de saber a existência
