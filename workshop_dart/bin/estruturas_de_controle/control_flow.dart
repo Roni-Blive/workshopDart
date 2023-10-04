@@ -108,8 +108,33 @@ void main() {
   /**
    * Map
    * 
+   * O Map é um objeto que possui chave e valor. Chaves e valores podem ser de quaisquer tipos.
+   * 
+   * No primeiro exemplo, o Map não está declarado mas Dart infere que é um.
+   * Se segundo, há a declaração explicíta de um Set de String.
+   * No terceiro, mais uma das formas de se implementação implicita.
    */
+  const cidadeRJ = {
+    'nome': 'Rio de Janeiro',
+    'dataFundacao': 1565,
+    'temperaturaMediaAnual': 23.6
+  };
 
+  var cidadeSP = Map<String, String>();
+
+  cidadeSP['nome'] = 'São Paulo';
+  cidadeSP['dataFundacao'] = '1553';
+  cidadeSP['temperaturaMediaAnual'] = '19.5';
+
+  var cidadeRN = <String, String>{};
+
+  cidadeRN['nome'] = 'Rio Grande do Norte';
+  cidadeRN['dataFundacao'] = '1598';
+  cidadeRN['temperaturaMediaAnual'] = '29,1';
+
+  print(cidadeRJ);
+  print(cidadeSP);
+  print(cidadeRN);
 
   // TO DO: Separar em funções
 }
