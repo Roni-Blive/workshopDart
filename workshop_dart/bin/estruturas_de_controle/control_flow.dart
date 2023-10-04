@@ -47,7 +47,7 @@ void main() {
     /* Podemos também chamar um método aqui:
      * enviarNovoConvidadoParaDelegaciaDeGotham(convidado)
      */
-    
+
   }while(existirCriminalidadeEmGotham());
   
   // Switch
@@ -69,4 +69,47 @@ void main() {
   // forEach
   gilbertoBarros.forEach(print);
 
+  /**
+   * Set
+   * 
+   * Set é uma collection de item únicos ou seja, seus valores não podem se repetirem.
+   * 
+   * No primeiro exemplo, o Set não está declarado mas Dart infere que o tipo da collection é um Set de String.
+   * Se segundo exemplo, há a declaração explicíta de um Set de String.
+   */
+  const batmanVillains = {'Joker', 'Poison Evy', 'Penguin'};
+
+  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho'};
+
+  /**
+   * Set - Ponto de atenção:
+   * 
+   * Se for criar um set vazio, é preferível sua declaração explicita. Do contrário, será criado um Map.
+   * 
+   * No primeiro exemplo, temos um Map vazio.
+   * Se segundo, temos um Set vazio.
+   */
+  const livrosNaPrateleira = {};
+  Set<String> livrosLidosEsteAno = {};
+
+  /**
+   * Set - Métodos oportunos
+   * 
+   */
+  livrosLidosEsteAno.add('O Retrato de Dorian Gray');
+  livrosLidosEsteAno.add('O Pequeno Princípe');
+  livrosLidosEsteAno.add('Fogo & Sangue');
+
+  livrosLidosEsteAno.forEach(print);
+  List<String> lista = livrosLidosEsteAno.toList();
+
+  print(lista);
+
+  /**
+   * Map
+   * 
+   */
+
+
+  // TO DO: Separar em funções
 }
