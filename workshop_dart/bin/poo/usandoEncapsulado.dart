@@ -4,8 +4,8 @@ void main()
 {
   Encapsulamento encapsulado = Encapsulamento();
 
-  encapsulado._variavelProtegita = 5;
+  // encapsulado._variavelProtegita = 5;
 
-  print(encapsulado._variavelProtegita);
-  print(encapsulado._metodoEncapsulado(2, 3));
+  // print(encapsulado._variavelProtegita);
+  // print(encapsulado._metodoEncapsulado(2, 3));
 }
