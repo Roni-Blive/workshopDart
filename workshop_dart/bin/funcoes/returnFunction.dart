@@ -15,4 +15,3 @@ int Function(int) somaParcial(int a) {
     return a + b + c;
   };
 }
-

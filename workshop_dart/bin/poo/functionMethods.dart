@@ -22,7 +22,7 @@ class Methods{
     return a != null? a + b: 0;
   }
   
-  int metodoNomeado({int? a, int b = 0}){
+  int metodoNomeado({int? a, int b = 0, required int c}){
     return a != null? a + b: 0;
   }
 
@@ -35,9 +35,7 @@ class Methods{
     return a;
   }
 
-  int Function(int) metodoRetornaFuncao()  {
-    return (int a) {
+  int Function(int) metodoRetornaFuncao()  => (int a) {
       return a;
     };
-  }
 }
