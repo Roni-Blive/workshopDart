@@ -1,6 +1,6 @@
 void main ()
 {
-  int a = namedFunction( z: 1);
+  int a = namedFunction(x: 2, z: 1);
 
   print(a);
 }
