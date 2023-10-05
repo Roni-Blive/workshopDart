@@ -1,5 +1,3 @@
-class TransportationEnum{}
-
 enum Transportation{
   carr,
   bike,
