@@ -69,14 +69,14 @@ class EnumExamples{
   ///
   void printOrderStatusComparison(OrderStatus status){
     if (status < OrderStatus.completed) {
-      print('The order has not been completed yet.');
+      print('The ${status.nome} has not been completed yet.');
     }
     else{
       if(status > OrderStatus.completed){
-        print('The order was cancelled.');
+        print('The ${status.nome} was cancelled.');
       }
       else{
-        print('The order has been completed.');
+        print('The ${status.nome} has been completed.');
       }
     }
   }
