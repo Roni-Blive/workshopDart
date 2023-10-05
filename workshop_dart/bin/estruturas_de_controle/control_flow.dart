@@ -1,11 +1,11 @@
 void main() {
   
-  bebidaNoFimDeSemana();
+  //bebidaNoFimDeSemana();
   kasinoNoSabadaco();
-  cidadeDeGotham();
-  acompanharPedido();
-  acompanharStatusDeVida();
-  sobreCidades();
+  // cidadeDeGotham();
+  // acompanharPedido();
+  // acompanharStatusDeVida();
+  // sobreCidades();
 
 }
 

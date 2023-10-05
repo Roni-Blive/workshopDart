@@ -1,0 +1,8 @@
+- Síncrono x Assíncrono
+
+- Funcionalidades assíncronas
+-- future
+-- delayed
+-- stream
+-- async
+-- async/await
