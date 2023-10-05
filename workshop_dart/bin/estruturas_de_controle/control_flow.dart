@@ -1,15 +1,16 @@
 void main() {
   
-  //bebidaNoFimDeSemana();
-  kasinoNoSabadaco();
+  // validarQuantidadeDeBebidaNoFimDeSemana();
+  // kasinoNoSabadaco();
   // cidadeDeGotham();
   // acompanharPedido();
+  listarMelhoresCarros();
   // acompanharStatusDeVida();
-  // sobreCidades();
+  //sobreEstados();
 
 }
 
-void bebidaNoFimDeSemana(){
+void validarQuantidadeDeBebidaNoFimDeSemana(){
   print("Quantos copos de cerveja você toma em uma noite de fim de semana?");
 
   for (int i = 0; i < 5; i++) {
@@ -20,20 +21,30 @@ void bebidaNoFimDeSemana(){
 void kasinoNoSabadaco(){
   
   var gilbertoBarros = 
-    ["Kasino!", "Aeeeee Kasinão!", "Can't get over, vai DJ!", 'Kasino aeee!', 'O som da noite!'];
+    ["Kasino!", "Aeeeee Kasinão!", "Can't get over, vai DJ!", "Kasino aeee!", "O som da noite!"];
   
   for(var fraseAnimada in gilbertoBarros){
     print(fraseAnimada.toUpperCase());
   }
 
   /**
+   * Resultado do for in:
+   * 
+   * KASINO!
+   * AEEEEE KASINÃO!
+   * CAN'T GET OVER, VAI DJ!
+   * KASINO AEEE!
+   * O SOM DA NOITE!
+   */
+
+  /**
    * Propriedade e métodos oportunos.
    * Existem muitos outros, vale a pena olhar a documentação.
    */
   gilbertoBarros.forEach(print);
-  print(gilbertoBarros.length);
-  print(gilbertoBarros.last);
-  print(gilbertoBarros.indexOf("Can't get over, vai DJ!"));
+  print(gilbertoBarros.length); // 5
+  print(gilbertoBarros.last); // 'O som da noite!'
+  print(gilbertoBarros.indexOf("Can't get over, vai DJ!")); // 2
 }
 
 void cidadeDeGotham(){
@@ -42,21 +53,21 @@ void cidadeDeGotham(){
     return false;
   }
   
-  while(existirCriminalidadeEmGotham()){
-    print("Batman está vigiando Gotham");
-  }
+  // while(existirCriminalidadeEmGotham()){
+  //   print("Batman está vigiando Gotham");
+  // }
   
-  bool delegaciaDeGothamEstaLotada(){
-    return true;
-  }
+  // bool delegaciaDeGothamEstaLotada(){
+  //   return true;
+  // }
   
-  // While com break
-  while(existirCriminalidadeEmGotham()){
-    if(delegaciaDeGothamEstaLotada()) {
-      print("Não ligar o BatSinal");
-      break;
-    }
-  }
+  // // While com break
+  // while(existirCriminalidadeEmGotham()){
+  //   if(delegaciaDeGothamEstaLotada()) {
+  //     print("Não ligar o BatSinal");
+  //     break;
+  //   }
+  // }
   
   // Do-While
   do{
@@ -75,6 +86,10 @@ enum StatusDoEnvioDoPedido{
 
 void acompanharPedido(){
   
+  List<String> encomenda = ["Cafeteira Italiana", "Livro de receitas de café"];
+  encomenda.add("Moedor de café");
+  print(encomenda);
+
   final statusPedido = StatusDoEnvioDoPedido.confirmado;
 
   switch(statusPedido){
@@ -89,6 +104,24 @@ void acompanharPedido(){
       break;
   }
 }
+
+void listarMelhoresCarros(){
+  
+  var carros = <String>[]; // Cria uma lista vazia
+
+  carros.add('Fiat Marea');
+  carros.add('Celta');
+  carros.add('Fiat Multipla');
+  carros.add('Peel Trident');
+  carros.add('Miles Eixoderroda');
+
+  print('Index do Celta: ${carros.indexOf('Celta')}');
+  print('Tamanho da lista: ${carros.length}');
+  print('Se a lista está vazia: ${carros.isEmpty}');
+  print('\n');
+  carros.forEach(print);
+}
+
 
 void acompanharStatusDeVida(){
 
@@ -112,6 +145,7 @@ void acompanharStatusDeVida(){
    * No primeiro exemplo, temos um Map vazio.
    * Se segundo, temos um Set vazio.
    */
+
   const mesesDoAnoEmQueFrequenteiAcademia = {};
   Set<String> livrosLidosEsteAno = {};
 
@@ -127,17 +161,16 @@ void acompanharStatusDeVida(){
 
   String listaEmString = livrosLidosEsteAno.toString();
 
-  List<String> lista = livrosLidosEsteAno.toList();
-
   // Imprimindo valores
-  print(lista);
+
+  print(livrosLidosEsteAno.toString());
   print(listaEmString);
   print(mesesDoAnoEmQueFrequenteiAcademia); // lista vazia
   print(inimigosDaMinhaCarteira);
   print(filmesAssistidos);
 }
 
-void sobreCidades(){
+void sobreEstados(){
   /**
    * Map
    * 
@@ -147,25 +180,31 @@ void sobreCidades(){
    * Se segundo, há a declaração explicíta de um Set de String.
    * No terceiro, mais uma das formas de se implementação implicita.
    */
-  const cidadeRJ = {
+  const estadoRJ = {
     'nome': 'Rio de Janeiro',
     'dataFundacao': 1565,
     'temperaturaMediaAnual': 23.6
   };
 
-  var cidadeSP = Map<String, String>();
+  var estadoSP = <String, String>{};
 
-  cidadeSP['nome'] = 'São Paulo';
-  cidadeSP['dataFundacao'] = '1553';
-  cidadeSP['temperaturaMediaAnual'] = '19.5';
+  estadoSP['nome'] = 'São Paulo';
+  estadoSP['dataFundacao'] = '1553';
+  estadoSP['temperaturaMediaAnual'] = '19.5';
 
-  var cidadeRN = <String, String>{};
+  var estadoRN = <String, String>{};
 
-  cidadeRN['nome'] = 'Rio Grande do Norte';
-  cidadeRN['dataFundacao'] = '1598';
-  cidadeRN['temperaturaMediaAnual'] = '29,1';
+  estadoRN['nome'] = 'Rio Grande do Norte';
+  estadoRN['dataFundacao'] = '1598';
+  estadoRN['temperaturaMediaAnual'] = '29.1';
 
-  print(cidadeRJ);
-  print(cidadeSP);
-  print(cidadeRN);
+  var estadoBA = <String, Object>{};
+  estadoBA['nome'] = 'Bahia';
+  estadoBA['dataFundacao'] = 1549;
+  estadoBA['temperaturaMediaAnual'] = 31.0;
+
+  print(estadoRJ);
+  print(estadoSP);
+  print(estadoRN);
+  print(estadoBA);
 }
