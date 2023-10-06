@@ -1,12 +1,12 @@
 void main() {
   
-  // validarQuantidadeDeBebidaNoFimDeSemana();
-  // kasinoNoSabadaco();
-  // cidadeDeGotham();
-  // acompanharPedido();
+  validarQuantidadeDeBebidaNoFimDeSemana();
+  kasinoNoSabadaco();
+  cidadeDeGotham();
+  acompanharPedido();
   listarMelhoresCarros();
-  // acompanharStatusDeVida();
-  //sobreEstados();
+  acompanharStatusDeVida();
+  sobreEstados();
 
 }
 
@@ -53,21 +53,21 @@ void cidadeDeGotham(){
     return false;
   }
   
-  // while(existirCriminalidadeEmGotham()){
-  //   print("Batman está vigiando Gotham");
-  // }
+  while(existirCriminalidadeEmGotham()){
+    print("Batman está vigiando Gotham");
+  }
   
-  // bool delegaciaDeGothamEstaLotada(){
-  //   return true;
-  // }
+  bool delegaciaDeGothamEstaLotada(){
+    return true;
+  }
   
-  // // While com break
-  // while(existirCriminalidadeEmGotham()){
-  //   if(delegaciaDeGothamEstaLotada()) {
-  //     print("Não ligar o BatSinal");
-  //     break;
-  //   }
-  // }
+  // While com break
+  while(existirCriminalidadeEmGotham()){
+    if(delegaciaDeGothamEstaLotada()) {
+      print("Não ligar o BatSinal");
+      break;
+    }
+  }
   
   // Do-While
   do{
@@ -106,7 +106,7 @@ void acompanharPedido(){
 }
 
 void listarMelhoresCarros(){
-  
+
   var carros = <String>[]; // Cria uma lista vazia
 
   carros.add('Fiat Marea');
@@ -133,9 +133,30 @@ void acompanharStatusDeVida(){
    * No primeiro exemplo, o Set não está declarado mas Dart infere que o tipo da collection é um Set de String.
    * Se segundo exemplo, há a declaração explicíta de um Set de String.
    */
-  const filmesAssistidos = {'La La Land', 'John Wick 4', 'Barbie'};
 
-  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho', 'Livros'};
+  var carros = <String>[]; // Cria uma lista vazia
+
+  carros.add('Fiat Marea');
+  carros.add('Celta');
+  carros.add('Fiat Multipla');
+  carros.add('Peel Trident');
+  carros.add('Miles Eixoderroda');
+
+  Set<String> copiaEmSet = Set.from(carros);
+
+  var filmesAssistidos = 
+    {'La La Land', 
+    'John Wick 4', 
+    'Barbie'};
+  
+  try{
+    filmesAssistidos.add('John Wick 4');
+  }on Exception catch (e){
+    print('Erro: $e');
+  }
+
+  print('Set após tentativa de inserir valores duplicados: $filmesAssistidos');
+  print('Set com valores vindo de um List $copiaEmSet');
 
   /**
    * Set - Ponto de atenção:
@@ -145,14 +166,17 @@ void acompanharStatusDeVida(){
    * No primeiro exemplo, temos um Map vazio.
    * Se segundo, temos um Set vazio.
    */
-
-  const mesesDoAnoEmQueFrequenteiAcademia = {};
-  Set<String> livrosLidosEsteAno = {};
+  var mesesDoAnoEmQueFrequenteiAcademia = {};
 
   /**
    * Set - Métodos oportunos
    * Existem muitos outros, vale a pena olhar a documentação.
    */
+
+  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho', 'Livros'};
+
+  Set<String> livrosLidosEsteAno = {};
+
   livrosLidosEsteAno.add('O Retrato de Dorian Gray');
   livrosLidosEsteAno.add('O Pequeno Princípe');
   livrosLidosEsteAno.add('Fogo & Sangue');
@@ -160,8 +184,6 @@ void acompanharStatusDeVida(){
   livrosLidosEsteAno.forEach(print);
 
   String listaEmString = livrosLidosEsteAno.toString();
-
-  // Imprimindo valores
 
   print(livrosLidosEsteAno.toString());
   print(listaEmString);
@@ -171,29 +193,19 @@ void acompanharStatusDeVida(){
 }
 
 void sobreEstados(){
-  /**
-   * Map
-   * 
-   * O Map é um objeto que possui chave e valor. Chaves e valores podem ser de quaisquer tipos.
-   * 
-   * No primeiro exemplo, o Map não está declarado mas Dart infere que é um.
-   * Se segundo, há a declaração explicíta de um Set de String.
-   * No terceiro, mais uma das formas de se implementação implicita.
-   */
-  const estadoRJ = {
+
+  var estadoRJ = {
     'nome': 'Rio de Janeiro',
     'dataFundacao': 1565,
     'temperaturaMediaAnual': 23.6
   };
 
-  var estadoSP = <String, String>{};
-
+  var estadoSP = new Map<String, String>();
   estadoSP['nome'] = 'São Paulo';
   estadoSP['dataFundacao'] = '1553';
   estadoSP['temperaturaMediaAnual'] = '19.5';
 
   var estadoRN = <String, String>{};
-
   estadoRN['nome'] = 'Rio Grande do Norte';
   estadoRN['dataFundacao'] = '1598';
   estadoRN['temperaturaMediaAnual'] = '29.1';
@@ -203,8 +215,20 @@ void sobreEstados(){
   estadoBA['dataFundacao'] = 1549;
   estadoBA['temperaturaMediaAnual'] = 31.0;
 
+  final praias = <String, bool>{'seTemPraias': true};
+
+  estadoRJ.addEntries(praias.entries);
+  estadoBA.addEntries(praias.entries);
+
+  estadoRJ.addAll({'capital': 'Rio de Janeiro'});
+  estadoBA.addAll({'capital': 'Salvador'});
+
+  // estadoSP.updateAll((key, value) => '');
+
+  estadoRJ.update('dataFundacao', (value) => '01-03-1565');
+
   print(estadoRJ);
-  print(estadoSP);
-  print(estadoRN);
   print(estadoBA);
+
+
 }
