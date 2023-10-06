@@ -8,6 +8,6 @@ class FunctionNullSafety {
   }
 
   /*void printNullName() {
-    printName(getName()});
+    printName(getName());
   }*/
 }
