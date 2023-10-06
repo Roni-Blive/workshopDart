@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 
 void main() async{
@@ -20,6 +22,10 @@ Future delayedPrint(int segundos, String mensagem){
   return Future.delayed(duration).then((value) => mensagem);
 }
 
+// class Pokemon {
+//   late String nome;
+// }
+
 Future<void> exemploMaisProximoDoReal() async {
   
   final result = await Client().get(
@@ -27,4 +33,15 @@ Future<void> exemploMaisProximoDoReal() async {
   );
 
   print(result.body);
+
+  // Lógica incompleta
+
+  String jsonResult = result.body;
+  final jsonMap = jsonDecode(jsonResult);
+
+  print(json);
+  print('\n');
+  print(jsonMap);
+
+
 }
