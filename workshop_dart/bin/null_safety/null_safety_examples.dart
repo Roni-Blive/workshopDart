@@ -29,6 +29,16 @@ class NullSafetyExamples{
     nullAssertionOperator.printNameLength();
   }
 
+  static void getNullAssertionOperatorPerishableProductWithDateExample(){
+    NullAssertionOperator operator = NullAssertionOperator();
+    operator.createPerishableProductWithDate();
+  }
+
+  static void getNullAssertionOperatorPerishableProductWithoutDateExample(){
+    NullAssertionOperator operator = NullAssertionOperator();
+    operator.createPerishableProductWithoutDate();
+  }
+
   static void getLateVariableBeforeInitializationExample(){
     LateVariableNullSafety lateVariableNullSafety = LateVariableNullSafety();
     lateVariableNullSafety.printBabyName();
