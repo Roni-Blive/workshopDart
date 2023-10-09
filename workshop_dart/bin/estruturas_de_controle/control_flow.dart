@@ -166,15 +166,15 @@ void acompanharStatusDeVida(){
    * No primeiro exemplo, temos um Map vazio.
    * Se segundo, temos um Set vazio.
    */
-  var mesesDoAnoEmQueFrequenteiAcademia = {};
+  
 
   /**
    * Set - Métodos oportunos
    * Existem muitos outros, vale a pena olhar a documentação.
    */
-
-  Set<String> inimigosDaMinhaCarteira = {'Boletos', 'Jogo do bicho', 'Livros'};
-
+  
+  var mesesDoAnoEmQueFrequenteiAcademia = {};
+  Set<String> despesasMensais = {'Boletos', 'Jogo do bicho', 'Livros'};
   Set<String> livrosLidosEsteAno = {};
 
   livrosLidosEsteAno.add('O Retrato de Dorian Gray');
@@ -183,12 +183,9 @@ void acompanharStatusDeVida(){
 
   livrosLidosEsteAno.forEach(print);
 
-  String listaEmString = livrosLidosEsteAno.toString();
-
   print(livrosLidosEsteAno.toString());
-  print(listaEmString);
   print(mesesDoAnoEmQueFrequenteiAcademia); // lista vazia
-  print(inimigosDaMinhaCarteira);
+  print(despesasMensais);
   print(filmesAssistidos);
 }
 
