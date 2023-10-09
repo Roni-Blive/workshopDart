@@ -197,7 +197,7 @@ void sobreEstados(){
     'temperaturaMediaAnual': 23.6
   };
 
-  var estadoSP = new Map<String, String>();
+  var estadoSP = <String, String>{};
   estadoSP['nome'] = 'São Paulo';
   estadoSP['dataFundacao'] = '1553';
   estadoSP['temperaturaMediaAnual'] = '19.5';

@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
+import 'pokemon.dart';
 
 void main() async{
   
@@ -12,7 +12,7 @@ void main() async{
 
   // print('Good');
 
-  exemploMaisProximoDoReal();
+  buscarPokemonInfo();
 
 }
 
@@ -22,26 +22,34 @@ Future delayedPrint(int segundos, String mensagem){
   return Future.delayed(duration).then((value) => mensagem);
 }
 
-// class Pokemon {
-//   late String nome;
-// }
-
-Future<void> exemploMaisProximoDoReal() async {
+Future<void> buscarPokemonInfo() async {
   
+  String pokemon = 'pichu';
+
   final result = await Client().get(
-    Uri.parse('https://pokeapi.co/api/v2/pokemon/pikachu')
+    Uri.parse('https://pokeapi.co/api/v2/pokemon/$pokemon')
   );
 
-  print(result.body);
+  String body = result.body;
+  final parsedJson = jsonDecode(body);
 
-  // Lógica incompleta
+  String nome = parsedJson['name'];
+  int peso = parsedJson['weight'];
+  int pokedex = parsedJson['id'];
 
-  String jsonResult = result.body;
-  final jsonMap = jsonDecode(jsonResult);
-
-  print(json);
-  print('\n');
-  print(jsonMap);
-
-
+  Pokemon pokemonInfo = Pokemon();
+  pokemonInfo.setName = nome;
+  pokemonInfo.setWeight = peso;
+  pokemonInfo.setPokedexNumber = pokedex;
+  
+  print('Nome: ${pokemonInfo.nome} | Peso: ${pokemonInfo.peso}Kg | Id Pokedex: ${pokemonInfo.idPokedex}');
 }
+
+/**
+ * TODO:
+ * - Analisar implementação de interação via terminal
+ * - Future que retorna valor. Pode-se usar o mesmo exemplo do retorno da PokeApi (retornar o result.body)
+ * - async* (yield)
+ * - Delayed
+ * - Strem
+ */
