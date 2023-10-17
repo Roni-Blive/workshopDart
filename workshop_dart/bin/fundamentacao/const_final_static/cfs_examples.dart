@@ -25,7 +25,7 @@ class ConstFinalStaticExamples{
     print("Prop 2: $_initializeLater");
   }
 
-  void modifyListElemment(){
+  void modifyListElement(){
     try {
       final List<String> finalNames = ["Luke Skywalker", "Palpatine"];
       const List<String> constNames = ["Yoda", "R2-D2"];
