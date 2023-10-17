@@ -15,7 +15,7 @@ class ClasseB
   String a = "";
   int b = 0;
 
-  ClasseB( String a, int a)
+  ClasseB( String a, int b)
   {
     this.a = a;
     this.b = b;

@@ -4,9 +4,14 @@ class ClasseA
 
   ClasseA(this.a);
 
-  ClasseA.inprmirA()
+  ClasseA.imprimirA()
   {
     print(a);
+  }
+
+  ClasseA.imprimirExterno()
+  {
+    
   }
 
 }
