@@ -227,5 +227,4 @@ void sobreEstados(){
   print(estadoRJ);
   print(estadoBA);
 
-
 }
