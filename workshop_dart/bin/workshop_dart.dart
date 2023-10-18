@@ -7,6 +7,7 @@ import 'fundamentacao/interpolation/interpolation_examples.dart';
 import 'fundamentacao/private_public/private_public_examples.dart';
 import 'null_safety/null_safety_examples.dart';
 import 'poo/exceptions/custom/custom_exception_example.dart';
+import 'poo/exceptions/try_catch/try_catch_example.dart';
 
 void main(List<String> arguments) {
   /*
@@ -36,6 +37,12 @@ void main(List<String> arguments) {
   createExceptionExample('exception message 01');
   createExceptionExampleWithInstantiation('exception message 02');
   createExceptionExampleWithLateInitialization('exception message 03');
+
+  createTryCatchWithFinallyExample('exception message example', 10);
+  createTryCatchWith2ParamsAndFinallyExample('exception message example', 11);
+  createTryCatchRethrowExample('exception message example', 11);
+  createTryCatchThrowObj();
+  createTryCatchThrowClass();
    */
 }
 
@@ -89,7 +96,8 @@ void getNullSafetyExamples() {
   NullSafetyExamples.getNullSafetyAssertionExample();
   print('');
   NullSafetyExamples.getLateVariableAfterInitializationExample();
-  print('getLateVariableBeforeInitializationExample will throw an uncatched exception');
+  print(
+      'getLateVariableBeforeInitializationExample will throw an uncatched exception');
   NullSafetyExamples.getLateVariableBeforeInitializationExample();
   print('');
   NullSafetyExamples.getNonNullableListInOneLineExample();
@@ -108,17 +116,44 @@ void getNullSafetyExamples() {
       .getNullAssertionOperatorPerishableProductWithoutDateExample();
 }
 
-void createExceptionExample(String exceptionMessage){
+void createExceptionExample(String exceptionMessage) {
   print('');
   ThrowMyException.throwException(exceptionMessage);
 }
 
-void createExceptionExampleWithInstantiation(String exceptionMessage){
+void createExceptionExampleWithInstantiation(String exceptionMessage) {
   print('');
   ThrowMyException.throwExceptionWithInstantiation(exceptionMessage);
 }
 
-void createExceptionExampleWithLateInitialization(String exceptionMessage){
+void createExceptionExampleWithLateInitialization(String exceptionMessage) {
   print('');
   ThrowMyException.throwExceptionWithLateInitialization(exceptionMessage);
+}
+
+void createTryCatchWithFinallyExample(String exceptionMessage, int number) {
+  print('');
+  TryCatchExamples.throwExceptionWithFinally(exceptionMessage, number);
+}
+
+void createTryCatchWith2ParamsAndFinallyExample(
+    String exceptionMessage, int number) {
+  print('');
+  TryCatchExamples.throwExceptionWithFinallyAndCatchWith2Args(
+      exceptionMessage, number);
+}
+
+void createTryCatchRethrowExample(String exceptionMessage, int number) {
+  print('');
+  TryCatchExamples.rethrowException(exceptionMessage, number);
+}
+
+void createTryCatchThrowObj() {
+  print('');
+  TryCatchExamples.throwObject();
+}
+
+void createTryCatchThrowClass() {
+  print('');
+  TryCatchExamples.throwClass();
 }
