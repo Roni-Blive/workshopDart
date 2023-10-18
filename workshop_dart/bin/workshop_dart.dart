@@ -6,6 +6,7 @@ import 'fundamentacao/enums/transportation_enum.dart';
 import 'fundamentacao/interpolation/interpolation_examples.dart';
 import 'fundamentacao/private_public/private_public_examples.dart';
 import 'null_safety/null_safety_examples.dart';
+import 'poo/exceptions/custom/custom_exception_example.dart';
 
 void main(List<String> arguments) {
   /*
@@ -31,7 +32,11 @@ void main(List<String> arguments) {
 
   print('getNullSafetyExamples');
   getNullSafetyExamples();
-  */
+
+  createExceptionExample('exception message 01');
+  createExceptionExampleWithInstantiation('exception message 02');
+  createExceptionExampleWithLateInitialization('exception message 03');
+   */
 }
 
 void getConstFinalStaticExamples() {
@@ -101,4 +106,19 @@ void getNullSafetyExamples() {
   print('');
   NullSafetyExamples
       .getNullAssertionOperatorPerishableProductWithoutDateExample();
+}
+
+void createExceptionExample(String exceptionMessage){
+  print('');
+  ThrowMyException.throwException(exceptionMessage);
+}
+
+void createExceptionExampleWithInstantiation(String exceptionMessage){
+  print('');
+  ThrowMyException.throwExceptionWithInstantiation(exceptionMessage);
+}
+
+void createExceptionExampleWithLateInitialization(String exceptionMessage){
+  print('');
+  ThrowMyException.throwExceptionWithLateInitialization(exceptionMessage);
 }
