@@ -24,5 +24,8 @@ class ClasseB
 
 class ClasseC
 {
-  
+  String a;
+  int b;
+
+  ClasseC(this.a, this.b);
 }
