@@ -4,30 +4,19 @@ import 'pokemon.dart';
 
 void main() async{
   
-  // print('Life');
+  buscarPokemonInfo().then((value) => print(value.isEmpty)); // false
+}
 
-  // await delayedPrint(3, 'Is').then((palavra) => {
-  //   print(palavra)
-  // });
+Future<String> buscarPokemonInfo() async {
 
-  // print('Good');
+  String pokemon = 'bulbasaur';
 
-  // exibirPokemonInfo();
+  final result = await Client().get(
+    Uri.parse('https://pokeapi.co/api/v2/pokemon/$pokemon')
+  );
 
-  // exibirNumerosPares();
-
-  // exibirNumerosImpares();
-
-  // exibirNumerosPrimos();
-
-  // exibir();
-
-  //getPokemonInfo();
-
-  // buscarPodekonInfo().then((value) => print(value.isEmpty)); // false
-
-  // Iterable<String> pokeStarters = ['bulbasaur', 'charmander', 'squirtle'];
-  // print(pokeStarters);
+  String body = result.body;
+  return body;
 }
 
 Future delayedPrint(int segundos, String mensagem){
@@ -46,7 +35,7 @@ Future<void> getPokemonInfo() async {
 
 }
 
-Future<void> exibirPokemonInfo() async {
+void exibirPokemonInfo() async {
   
   String pokemon = 'pichu';
 
@@ -69,18 +58,8 @@ Future<void> exibirPokemonInfo() async {
   print('Nome: ${pokemonInfo.nome} | Peso: ${pokemonInfo.peso}Kg | Id Pokedex: ${pokemonInfo.idPokedex}');
 }
 
+
 // Future que retorna valor. Pode-se usar o mesmo exemplo do retorno da PokeApi (retornar o result.body)
-Future<String> buscarPodekonInfo() async {
-
-  String pokemon = 'bulbasaur';
-
-  final result = await Client().get(
-    Uri.parse('https://pokeapi.co/api/v2/pokemon/$pokemon')
-  );
-
-  String body = result.body;
-  return body;
-}
 
 /// sync* informa ao Dart que a função vai produzir valores múltiplos QUANDO for solicitado.
 /// O uso do yield é oportuno para retornarmos um valor de cada vez. 
@@ -112,7 +91,7 @@ Iterable<int> getRangeWhitoutLoop(int start, int finish) sync* {
 
 void exibir() {
 
-  var numbers = getRangeWhitoutLoop(1, 10);
+  var numbers = getRangeWhitoutLoop(2, 10);
 
   numbers.forEach(print);
 }
@@ -141,7 +120,8 @@ Stream<int> buscarValores() async* {
 }
 
 /// Dependende de como está sendo chamado os valores daquele método sync*
-Iterable<int> buscarNumerosPrimos() sync* {
+
+Iterable<int> buscarNumeros() sync* {
 
   print("Iniciado.");
 
@@ -153,35 +133,38 @@ Iterable<int> buscarNumerosPrimos() sync* {
 
 }
 
-void exibirNumerosPrimos() {
+void exibirValores() {
 
-  var numbers = buscarNumerosPrimos();
+  Iterable<int> numbers = buscarNumeros();
 
-  //print(numbers);
-  numbers.forEach(print);
+  print(numbers);
 }
 
-/**
- * TODO:
- * - Analisar implementação de interação via terminal
- * 
- * ROTEIRO:
- * - Future
- * - Iterable
- * - yield
- * - yield*
- * - async
- * - async*
- * - sync*
- * 
- */
 
-// class MyStrings extends Iterable<String> {
+
+
+Stream<int> contagemRegressiva(int n) async* {
+  if (n > 0) {  
+    await Future.delayed(Duration(seconds: 1));
+    yield n; 
+    yield* contagemRegressiva(n - 1); 
+  }
+}
+
+void inicializarContagemRegressiva() {
+  print("Iniciado");
+  contagemRegressiva(5).forEach(print);
+  print("Finalizado");
+}
+
+
+
+class MyStrings extends Iterable<String> {
   
-//   MyStrings(this.stringList);
+  MyStrings(this.stringList);
 
-//   final List<String> stringList;
+  final List<String> stringList;
 
-//   @override
-//   Iterator<String> get iterator => stringList.iterator;
-// }
+  @override
+  Iterator<String> get iterator => stringList.iterator;
+}
