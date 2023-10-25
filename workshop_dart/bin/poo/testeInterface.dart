@@ -8,6 +8,6 @@ class test implements Veiculo{
 
 }
 
-class test_2 extends Veiculo{
+// class test_2 extends Veiculo{
 
-}
+// }
